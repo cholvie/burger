@@ -18,9 +18,9 @@ router.get("/", function(req, res) {
 
 router.post("/api/burgers", function(req, res) {
   cat.create([
-    "burger_name", "Ramen"
+    "burger_name", "devoured"
   ], [
-    req.body.burger_name, req.body.Ramen
+    req.body.burger_name, req.body.devoured
   ], function(result) {
       
     // Send back the ID of the new burger
@@ -34,7 +34,7 @@ router.put("/api/burgers/:id", function(req, res) {
   console.log("condition", condition);
 
   burger.update({
-    Ramen: req.body.Ramen
+    devoured: req.body.devoured
   }, condition, function(result) {
     if (result.changedRows == 0) {
 
